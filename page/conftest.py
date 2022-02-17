@@ -31,7 +31,7 @@ def driver(request):
         chrome_options.add_argument('--hide-scrollbars')
         prefs = {"profile.managed_default_content_settings.images": 1}
         chrome_options.add_experimental_option("prefs", prefs)
-        _driver = webdriver.Chrome(chrome_options=chrome_options)
+        _driver = webdriver.Chrome(chrome_options=chrome_options,executable_path='/usr/local/bin/chromedriver')
 
     else:
         log.info('当前运行的操作系统为mac')
@@ -45,7 +45,7 @@ def driver(request):
         chrome_options.add_argument('--disable-gpu')  # 禁用GPU硬件加速，如果软件渲染器没有就位，则GPU进程将不会启动
         chrome_options.add_argument('--disable-dev-shm-usage')
         chrome_options.add_argument('--headless')  # 无界面
-        _driver = webdriver.Chrome(chrome_options=chrome_options)
+        _driver = webdriver.Chrome(chrome_options=chrome_options,executable_path='/usr/local/bin/chromedriver')
 
 
     def end():
