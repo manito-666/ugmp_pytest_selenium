@@ -10,7 +10,7 @@ def login_fixtrue(driver):
     #登录前置操作
     options = webdriver.ChromeOptions()
     options.add_experimental_option("excludeSwitches", ['enable-automation'])
-    driver = webdriver.Chrome(chrome_options=options)
+    driver = webdriver.Chrome(chrome_options=options,executable_path='/usr/local/bin/chromedrive')
     driver.maximize_window()
     return driver
 def pytest_addoption(parser):
