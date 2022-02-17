@@ -30,6 +30,7 @@ def driver(request):
     else:
         log.info('当前运行的操作系统为mac')
         chrome_options = Options()
+        chrome_options.add_argument('--start-maximized')
         chrome_options.add_argument('--window-size=1920,1080')  # 设置当前窗口的宽度，高度
         chrome_options.add_argument('--no-sandbox')#解决DevToolsActivePort文件不存在报错问题
         chrome_options.add_argument('--disable-gpu')#禁用GPU硬件加速，如果软件渲染器没有就位，则GPU进程将不会启动
