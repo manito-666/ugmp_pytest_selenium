@@ -1,0 +1,28 @@
+login_element:
+    #loc,value
+  - ["xpath",'//*[@id="pane-recent"]/div/a[1]']
+  - ["xpath",'//*[@id="app"]/div/div[1]/div[2]/div[1]/div/ul/div[1]/li/div']
+  - ["xpath",'//*[@id="app"]/div/div[1]/div[2]/div[1]/div/ul/div[1]/li/ul/div[3]/a/li']
+  - ["xpath",'//*[@id="app"]/div/div[2]/section/div/div[2]/div[1]/div/button']
+
+
+ugmp_element:
+  - ["xpath",'//*[@id="pane-recent"]/div/a[1]']
+  - ["xpath",'//*[@id="app"]/div/div[1]/div[2]/div[1]/div/ul/div[1]/li/div']
+  - ["xpath",'//*[@id="app"]/div/div[1]/div[2]/div[1]/div/ul/div[1]/li/ul/div[1]/a/li/span']
+  - ["xpath",'//*[@id="app"]/div/div[2]/section/div/div[2]/div[1]/div/button']
+  - ["xpath",'//*[@id="app"]/div/div[2]/section/div/div[1]/form/div[2]/div/div/div[1]/span/span/i']
+  - ["xpath",'/html/body/div[2]/div[1]/div[1]/ul/li[2]']
+  - ["xpath",'//*[@id="app"]/div/div[2]/section/div/div[1]/form/div[3]/div/div[1]/input']
+  - ["xpath",'//*[@id="app"]/div/div[2]/section/div/div[1]/form/div[4]/div/div/input']
+  - ["xpath",'//*[@id="app"]/div/div[2]/section/div/div[1]/form/div[6]/div/button[2]']
+
+
+
+account message:
+    #server、role
+  - ["1","44750700"]
+
+
+
+
