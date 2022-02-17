@@ -7,8 +7,8 @@ import pytest
 testelement = ReadFileData("login_page.yml").get_yaml_data()
 
 class Test_BPC():
-    @allure.feature("功能点：login")
-    @allure.story("用例：登陆UGMP")
+    @allure.feature("功能点：BPC用户查询")
+    @allure.story("用例：登陆ugmp后查询帐号数据")
     def test_page1(self,login_fixtrue):
         driver = login_fixtrue
         web = Base(driver)
