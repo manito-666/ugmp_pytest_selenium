@@ -26,7 +26,7 @@ def driver(request):
         chrome_options.add_argument('--window-size=1920,1080')  # 设置当前窗口的宽度，高度
         chrome_options.add_argument('--headless')  # 无界面
         log.info("当前运行的操作系统为windows")
-        _driver = webdriver.Chrome(chrome_options=chrome_options)
+        _driver = webdriver.Chrome(chrome_options=chrome_options,executable_path='/usr/local/bin/chromedrive')
     else:
         log.info('当前运行的操作系统为mac')
         chrome_options = Options()
@@ -36,7 +36,7 @@ def driver(request):
         chrome_options.add_argument('--disable-gpu')#禁用GPU硬件加速，如果软件渲染器没有就位，则GPU进程将不会启动
         chrome_options.add_argument('--disable-dev-shm-usage')
         chrome_options.add_argument('--headless')  # 无界面
-        _driver = webdriver.Chrome(chrome_options=chrome_options)
+        _driver = webdriver.Chrome(chrome_options=chrome_options,executable_path='/usr/local/bin/chromedrive')
 
     def end():
         log.info("全部用例执行完后 teardown quit dirver")
