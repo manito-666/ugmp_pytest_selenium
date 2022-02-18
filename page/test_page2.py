@@ -51,12 +51,17 @@ class Test_AOD():
             web.input(loc8,text=tuple(role))
             time.sleep(2)
             log.info("输入角色:{}".format(role))
-        loc9=tuple((testelement["ugmp_element"])[6])
+        loc9=tuple((testelement["ugmp_element"])[8])
         with allure.step("点击查询"):
             web.click(loc9)
-            log.info("查询角色成功")
-
-
+            log.info("查询角色")
+        try:
+            loc10=web.get_text(tuple((testelement["ugmp_element"])[12]))
+            log.info("测试成功，通行证id为：{}".format(loc10))
+            time.sleep(3)
+        except Exception as e:
+            log.error("测试失败: " + format(e))
+            web.get_windows_img()
 
 
 

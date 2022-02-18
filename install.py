@@ -15,4 +15,5 @@ if os.path.isfile(PATH+"/requirements.txt"):
     except:
         print("Failed SomeHow")
 
-
+else:
+    log.debug("不存在文件requirements.txt")

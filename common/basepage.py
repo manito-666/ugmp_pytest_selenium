@@ -1,6 +1,5 @@
-import time
-
-from selenium import webdriver
+import logging
+import time,os
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from  selenium.webdriver.support.select import Select
@@ -235,14 +234,14 @@ class Base():
         ele = self.find(locator)
         ActionChains(self.driver).move_to_element(ele).perform()
 
-if __name__ == '__main__':
-    options = webdriver.ChromeOptions()
-    options.add_experimental_option("excludeSwitches", ['enable-automation'])
-    driver = webdriver.Chrome(chrome_options=options)
-    web = Base(driver)
-    driver.get("https://www.baidu.com")
-    loc_1 = ("xpath", '//*[@id="kw"]')
-    web.input(loc_1, "hello")
-    web.click(('xpath','//*[@id="su"]'))
-    time.sleep(3)
-    driver.close()
+    def get_windows_img(self):
+        path =os.path.abspath(os.path.join(os.path.dirname("__file__"),os.path.pardir))
+        file_path=os.path.join(path,'util','photo','')
+        rq = time.strftime('%Y%m%d%H%M', time.localtime(time.time()))
+        screen_name = file_path + rq + '.png'
+        try:
+            self.driver.get_screenshot_as_file(screen_name)
+            print("截图已保存在：" + file_path)
+        except NameError as e:
+            self.get_windows_img()
+
