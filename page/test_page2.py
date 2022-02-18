@@ -56,7 +56,7 @@ class Test_AOD():
             web.click(loc9)
             log.info("查询角色")
         try:
-            loc10=web.get_text(tuple((testelement["ugmp_element"])[12]))
+            loc10=web.get_text(tuple((testelement["ugmp_element"])[9]))
             log.info("测试成功，通行证id为：{}".format(loc10))
             time.sleep(3)
         except Exception as e:
